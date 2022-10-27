@@ -1,0 +1,34 @@
+query Profile($limit: Int) {
+  profile(limit: $limit) {
+    id
+    fullname
+  }
+}
+
+query Office($where: office_bool_exp) {
+  office(where: $where) {
+    code
+    name
+  }
+}
+
+query Team {
+  team {
+    id
+    name
+    office_id
+    is_empty
+  }
+}
+
+query MyQuery {
+  bonus {
+    id
+  }
+}
+
+mutation CreateTeam($object: team_insert_input!) {
+  insert_team_one(object: $object) {
+    id
+  }
+}
